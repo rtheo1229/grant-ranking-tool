@@ -1,31 +1,52 @@
-console.log("✅ logic.js loaded");
+console.log("logic.js loaded");
 
-function forcePopulateDropdown() {
-  const select = document.getElementById("applicationSelect");
+const appSelect = document.getElementById("applicationSelect");
+const conflict = document.getElementById("conflictSelect");
+const ranking = document.getElementById("rankingSection");
 
-  if (!select) {
-    console.error("❌ applicationSelect NOT found");
+// ✅ 1. Populate dropdown
+function populateDropdown() {
+  if (!window.appData || !Array.isArray(window.appData)) {
+    console.error("appData not found");
     return;
   }
-
-  if (!window.appData || window.appData.length === 0) {
-    console.error("❌ appData NOT found on window");
-    return;
-  }
-
-  console.log("✅ Found", window.appData.length, "projects");
-
-  select.innerHTML = '<option value="">-- Select Project --</option>';
 
   window.appData.forEach(app => {
     const option = document.createElement("option");
     option.value = app.ProjectName;
     option.textContent = app.ProjectName;
-    select.appendChild(option);
+    appSelect.appendChild(option);
   });
 }
 
-// Run multiple times to defeat GoDaddy iframe delays
-setTimeout(forcePopulateDropdown, 500);
-setTimeout(forcePopulateDropdown, 1500);
-setTimeout(forcePopulateDropdown, 3000);
+populateDropdown();
+
+// ✅ 2. ALWAYS show project details when project is selected
+appSelect.addEventListener("change", () => {
+  const selected = window.appData.find(
+    a => a.ProjectName === appSelect.value
+  );
+
+  if (!selected) return;
+
+  document.getElementById("projectDescription").innerText =
+    selected.ProjectDescription || "";
+
+  document.getElementById("projectBudget").innerText =
+    selected.ProjectBudget || "";
+
+  document.getElementById("requestedAmount").innerText =
+    selected.AmountRequested || "";
+
+  document.getElementById("projectEvaluation").innerText =
+    selected.Evaluation || "";
+});
+
+// ✅ 3. ONLY control SCORING visibility with conflict
+conflict.addEventListener("change", () => {
+  if (conflict.value === "no") {
+    ranking.classList.remove("hidden");
+  } else {
+    ranking.classList.add("hidden");
+  }
+});
