@@ -22,18 +22,31 @@ const statusMessage       = document.getElementById("statusMessage");
 
 
 // ====== POPULATE DROPDOWN ======
-function populateDropdown() {
-  // Start with placeholder
-  appSelect.innerHTML = '<option value="">-- Select Project --</option>';
+window.addEventListener("DOMContentLoaded", function () {
+  const select = document.getElementById("applicationSelect");
+
+  if (!select) {
+    console.error("Dropdown not found");
+    return;
+  }
+
+  if (!window.appData || appData.length === 0) {
+    console.error("appData not loaded");
+    return;
+  }
+
+  // Clear existing options
+  select.innerHTML = '<option value="">-- Select Project --</option>';
 
   appData.forEach(app => {
     const option = document.createElement("option");
     option.value = app.ProjectName;
     option.textContent = app.ProjectName;
-    appSelect.appendChild(option);
+    select.appendChild(option);
   });
-}
 
+  console.log("✅ Dropdown populated successfully");
+});
 
 // ====== UPDATE PROJECT DETAILS WHEN SELECTED ======
 function handleApplicationChange() {
@@ -172,4 +185,5 @@ function init() {
 }
 
 document.addEventListener("DOMContentLoaded", init);
+
 
