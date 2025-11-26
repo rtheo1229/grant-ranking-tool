@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Grant Application Ranking Tool</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; max-width: 900px; }
+    label { font-weight: bold; }
+    select, input, textarea { width: 100%; margin: 6px 0 16px; padding: 6px; }
+    .hidden { display: none; }
+    .section { margin-bottom: 25px; padding: 15px; border: 1px solid #aaa; border-radius: 8px; }
+    .criteria-box { background: #f9f9f9; padding: 10px; border-radius: 6px; }
+    button { padding: 10px 20px; font-size: 16px; }
+    #statusMsg { font-weight: bold; margin-top: 12px; }
+  </style>
+</head>
+
+<body>
+
+<h1>Grant Application Ranking Tool</h1>
+
+<div class="section">
+  <label>Your Name:</label>
+  <input type="text" id="raterName" required>
+
+  <label>Select Application:</label>
+  <select id="applicationSelect">
+    <option value="">-- Select Project --</option>
+  </select>
+
+  <label>Do you have a conflict of interest with this application?</label>
+  <select id="conflictSelect">
+    <option value="">-- Select --</option>
+    <option value="yes">Yes</option>
+    <option value="no">No</option>
+  </select>
+</div>
+
+<div id="rankingSection" class="hidden">
+
+  <div class="section">
+    <h2>Project Description</h2>
+    <div id="projectDescription"></div>
+  </div>
+
+  <div class="section">
+    <h2>Project Budget</h2>
+    <div id="projectBudget"></div>
+    <h3>Requested Amount</h3>
+    <div id="requestedAmount"></div>
+  </div>
+
+  <div class="section">
+    <h3>Alignment</h3>
+    <select id="scoreAlignment">
+      <option value="">-- Select --</option>
+      <option>0</option><option>1</option><option>2</option><option>3</option>
+    </select>
+
+    <h3>Innovation</h3>
+    <select id="scoreInnovation">
+      <option value="">-- Select --</option>
+      <option>0</option><option>1</option><option>2</option><option>3</option>
+    </select>
+
+    <h3>Budget</h3>
+    <select id="scoreBudget">
+      <option value="">-- Select --</option>
+      <option>0</option><option>1</option><option>2</option><option>3</option>
+    </select>
+
+    <h3>Evaluation</h3>
+    <select id="scoreEvaluation">
+      <option value="">-- Select --</option>
+      <option>0</option><option>1</option><option>2</option><option>3</option>
+    </select>
+  </div>
+
+  <div class="section">
+    <label>Comments:</label>
+    <textarea id="comments" rows="5"></textarea>
+
+    <button id="submitBtn">Submit Ranking</button>
+
+    <p id="statusMsg"></p>
+  </div>
+
+</div>
+
+<!-- ✅ LOAD YOUR DATA FILE -->
+<script src="appData.js"></script>
+
+<!-- ✅ LOAD YOUR LOGIC FILE -->
+<script src="logic.js"></script>
+
+</body>
+</html>
