@@ -1,7 +1,7 @@
 // appData.js
 // Holds all project applications
 
-const appData = [
+window.appData = [
   {
     ProjectName: "Cultural Awareness Project",
     ProjectDescription: "This project will reach the entire population of Glendale Elementary School that educates approximately 280 kids spanning from prekindergarten to grade 5. \n1. We will be bringing in Napoleon Maddox from Artists on Tour with the Cincinnati Arts Associaction, Finding your Voice through hiphop during the month of February to have instructional learning opportunities to help students with the following objectives-\nStudents will:\n*understand the origins of Black History Month: Students should learn how and why Black History Month was created and its purpose.\n*Recognize diverse contributions: Students should be able to identify and discuss the accomplishments of Black Americans in various fields, including the civil rights movement, science, art, and music.\n*Explore key historical events: Students can be introduced to important events like the Underground Railroad, the Civil Rights Movement, and the Harlem Renaissance through age-appropriate lessons.\n*Develop research and literacy skills: Older elementary students can conduct research on Black leaders, learn to find credible sources, and create bibliographies.\n*Connect history to the present: Students can learn about the long-term impact of historical events and the ongoing struggle for equality of all people\n\n2. We will also be purchasing one book for each PreK-2 classrooms, as well as another title for grades 3-5. (The ABC's of Black History and The Alma Thomas Story, Ablaze with Color.)",
@@ -101,3 +101,4 @@ const appData = [
     Evaluation: "We need the $600 to pay for the two buses to and from the museum center.  We would also be happy for $300 to help pay for one of the buses. The Museum of Natural History & Science at Cincinnati Museum Center offers a world of science, history and nature through interactive exhibits and amazing artifacts. We encourage kids to climb, crawl, explore and learn about themselves and the world around them. Go on a wilderness adventure through The Woods, be a part of a complex machine in the Energy Zone and explore the neighborhood in Kids’ Town. Dive into arts, culture, reading, science and more with over 1,800 hours of programming each year.  We can only get to this amazing museum with your help!  Thanks so much for considering."
   }
 ];
+
