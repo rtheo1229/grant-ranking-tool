@@ -100,7 +100,7 @@ function validateForm() {
 // Replace FORMS_ENDPOINT and FIELD_IDS.* with the values from your actual Microsoft Form.
 // You typically get these from the "Collect responses via web" / API sample for your form.
 
-const FORMS_ENDPOINT = "https://forms.office.com/formapi/api/9188040d-6c67-4c5b-b112-36a304b66dad/users/00000000-0000-0000-0003-400187f80e9d/forms('DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAYf4Dp1UOFdPS1gyRkNIR0dIMlVGN0JSVVpPUTE4WS4u')/responses",
+const FORMS_ENDPOINT = "https://forms.office.com/formapi/api/9188040d-6c67-4c5b-b112-36a304b66dad/users/00000000-0000-0000-0003-400187f80e9d/forms('DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAYf4Dp1UOFdPS1gyRkNIR0dIMlVGN0JSVVpPUTE4WS4u')/responses";
 
 // Map our local fields to your Microsoft Forms question IDs
 // (Use the IDs from your own form – the ones that look like "r1234567890abcdef")
@@ -172,3 +172,4 @@ function init() {
 }
 
 document.addEventListener("DOMContentLoaded", init);
+
